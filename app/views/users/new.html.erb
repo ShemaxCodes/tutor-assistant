@@ -1,0 +1,31 @@
+<h1> Sign Up:</h1><br>
+
+<%= form_for @user do |f| %>
+<%= f.label :first_name, "First Name:" %>
+<%= f.text_field :first_name %>
+<br>
+
+<%= f.label :last_name, "Last Name:" %>
+<%= f.text_field :last_name %>
+<br>
+
+<%= f.label :username, "Username:" %>
+<%= f.text_field :username %>
+<br>
+
+<%= f.label :email, "Email:" %>
+<%= f.text_field :email %>
+<br>
+<%= f.label :role, "Select Role:" %>
+<%= f.select :role, User.roles %><br>
+
+<%= f.label :password, "Password:" %>
+<%= f.password_field :password %>
+<br>
+
+<%=f.label :password_confirmation, "Confirmation" %>
+<%=f.password_field :password_confirmation%>
+
+<br>
+<%= f.submit "Create my account" %>
+<% end %>
