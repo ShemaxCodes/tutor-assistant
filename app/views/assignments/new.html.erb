@@ -1,0 +1,23 @@
+<h1> Create New Assignment:</h1><br>
+
+<%= form_for @assignment do |f| %>
+<%= f.label :title, "Name of Assignment:" %>
+<%= f.text_field :title %>
+<br>
+
+<%= f.label :instructions, "Instructions:" %>
+<%= f.text_area :instructions %>
+<br>
+
+<%= f.label :due_date, "Due Date:" %>
+<%= f.text_field :due_date %>
+<br>
+
+<%= f.label :score, "Score:" %>
+<%= f.number_field :score %>
+<br>
+
+
+<br>
+<button><%= f.submit "Create Assignment" %></button>
+<% end %>

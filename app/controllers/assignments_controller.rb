@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-     before_action :current_user, only: [:show, :index]
+     before_action :current_user
      protect_from_forgery
  
  def index 
@@ -13,10 +13,11 @@ end
  
  
  def new
-     if current_user
+    byebug
+     if current_user.teacher?
          @assignment = Assignment.new
      else 
-         redirect_to login_path, notice: "User not found"
+         redirect_to login_path, notice: "Credentials not found"
      end 
  end 
  
@@ -74,7 +75,7 @@ end
  
  
  def assignment_params
-     params.require(:assignment).permit(:title, :title, :instructions, :due_date, :score)
+     params.require(:assignment).permit(:title, :instructions, :due_date, :score)
  end
 
 

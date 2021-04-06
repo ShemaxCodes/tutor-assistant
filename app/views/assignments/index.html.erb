@@ -1,1 +1,8 @@
 <h1>Your Assignments</h1>
+
+<% @assignments.each do |a| %>
+    <%= a.title %> - <%= a.instructions %>
+
+<% end %>
+
+<%= link_to "Create a New Assignment", new_assignment_path %>

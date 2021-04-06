@@ -16,11 +16,11 @@ class User < ActiveRecord::Base
 
 
     def student
-      @current_user.role == "student"
+      self.role == "student"
     end 
 
     def teacher
-      @current_user.role == "teacher"
+      self.role == "teacher"
     end 
 
     def admin

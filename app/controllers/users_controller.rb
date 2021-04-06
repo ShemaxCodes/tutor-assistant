@@ -17,10 +17,11 @@ class UsersController < ApplicationController
         if @user.student && @user.save
           session[:user_id] = @user.id 
           flash[:success] = "Welcome to Your Student Dashboard!"
-          byebug
           redirect_to login_path
-        else 
-          render :new 
+        elsif @user.teacher && @user.save
+          redirect_to assignments_path
+        else
+          render :new
         end 
       end 
  
