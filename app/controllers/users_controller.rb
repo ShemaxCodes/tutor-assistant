@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     def create
       #byebug
       @user = User.new(user_params)
-        if @user.role == "student" && @user.save
+        if @user.student && @user.save
           session[:user_id] = @user.id 
           flash[:success] = "Welcome to Your Student Dashboard!"
           byebug

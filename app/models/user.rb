@@ -13,4 +13,17 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
                     
     validates :password, confirmation: { case_sensitive: true }
+
+
+    def student
+      @current_user.role == "student"
+    end 
+
+    def teacher
+      @current_user.role == "teacher"
+    end 
+
+    def admin
+      @current_user.role == "admin"
+    end 
   end
