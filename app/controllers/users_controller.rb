@@ -12,23 +12,22 @@ class UsersController < ApplicationController
     end
     
     def create
+      #byebug
       @user = User.new(user_params)
-        if @user.save
+        if @user.role == "student" && @user.save
           session[:user_id] = @user.id 
-          flash[:success] = "Welcome to the Forge App!"
+          flash[:success] = "Welcome to Your Student Dashboard!"
+          byebug
           redirect_to login_path
         else 
           render :new 
         end 
       end 
+ 
   
     def show
       if current_user
-        #user = User.find(params[:user_id])
-        redirect_to user_businesses_path(@current_user)
-      else 
-        redirect_to "/"
-      
+        
         
       end
     end 
@@ -36,6 +35,6 @@ class UsersController < ApplicationController
     private
   
       def user_params
-          params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation)
+          params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation, :role)
       end
   end
