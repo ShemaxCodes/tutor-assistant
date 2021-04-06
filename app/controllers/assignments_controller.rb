@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-     before_action :current_user, only: [:show, :index, :new, :create, :edit]
+     before_action :current_user, only: [:show, :index]
      protect_from_forgery
  
  def index 
@@ -46,26 +46,26 @@ end
      if !logged_in?
          redirect_to login_path
      end
-     @business = current_user.businesses.find_by(user_id: params[:id], id: params[:user_id])
-         if @business.title != nil || @business.description != nil 
+     @business = current_user.assignments.find_by(user_id: params[:id], id: params[:user_id])
+         if @assignment.title != nil || @assignment.instructions != nil 
                  render :edit
              else 
-                 redirect_to new_user_business_path
+                 redirect_to new_user_assignment_path
              end 
           
  end 
  
  def update
-     business = Business.find_by(id: params[:id])
-     business.update(business_params)
-     business.save
-     redirect_to user_businesses_path
+     assignment = Assignment.find_by(id: params[:id])
+     assignment.update(assignment_params)
+     assignment.save
+     redirect_to user_assignments_path
  end 
  
  def destroy
-     @business = Business.find_by(id: params[:id])
-     @business.destroy
-     redirect_to user_businesses_path
+     @assignment = assignment.find_by(id: params[:id])
+     @assignment.destroy
+     redirect_to user_assignments_path
  end
  
  private
@@ -73,8 +73,8 @@ end
  
  
  
- def business_params
-     params.require(:business).permit(:title, :image, :city, :state, :user_id, :category_id, :description)
+ def assignment_params
+     params.require(:assignment).permit(:title, :title, :instructions, :due_date, :score)
  end
 
 

@@ -14,9 +14,9 @@ Rails.application.routes.draw do
 
   resources :users 
   resources :assignments
-  
+
   resources :users, only: [:show] do #nested resource for assignments
-    resources :assignments, only: [:show, :index]
+    resources :assignments, only: [:show, :index] #shows entire list of assignments and indiv assignments
   end 
 
 end
