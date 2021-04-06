@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root "welcome#index"
-  resources :users 
+  
 
   get "/signup", to: "users#new", as: 'new_user_path'
   get "/login", to: "sessions#new", as: 'login_path'
@@ -11,4 +11,12 @@ Rails.application.routes.draw do
   get '/logout', to: "sessions#destroy"
 
   get '/auth/google_oauth2/callback', to: "sessions#google_login"
+
+  resources :users 
+  resources :assignments
+  
+  resources :users, only: [:show] do #nested resource for assignments
+    resources :assignments, only: [:show, :index]
+  end 
+
 end
