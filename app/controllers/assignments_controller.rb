@@ -13,7 +13,7 @@ end
  
  
  def new
-    byebug
+    #byebug
      if current_user.teacher?
          @assignment = Assignment.new
      else 
@@ -26,7 +26,7 @@ end
     if @assignment.save
      current_user.assignments << @assignment
      #session[:user_id] = @user.id
-         redirect_to user_assignments_path
+         redirect_to user_assignments_path(:user_id)
     else 
          redirect_to new_user_assignment_path
     end 

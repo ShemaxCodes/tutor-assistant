@@ -16,9 +16,13 @@ class SessionsController < ApplicationController
    def create
        user = User.find_by(email: params[:session][:email].downcase)
        if user.teacher? && user.authenticate(params[:session][:password])
-        byebug
+        #byebug
            log_in user
            redirect_to assignments_path
+       elsif 
+        user.student? && user.authenticate(params[:session][:password])
+           log_in user
+           redirect_to user_user_assignments_path(:user_id)
        else 
            flash.now[:danger] = "Invalid email/password. Please try again."
            render :new

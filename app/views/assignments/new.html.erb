@@ -14,7 +14,7 @@
 <br>
 
 <%= f.label :due_date, "Due Date:" %>
-<%= f.text_field :due_date %>
+<%= f.datetime_field :due_date %>
 <br>
 
 <%= f.label :score, "Score:" %>
@@ -23,5 +23,5 @@
 
 
 <br>
-<button><%= f.submit "Create Assignment" %></button>
+<%= f.submit "Create Assignment" %>
 <% end %>

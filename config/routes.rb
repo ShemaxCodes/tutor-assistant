@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   resources :assignments
 
   resources :users, only: [:show] do #nested resource for assignments
-    resources :assignments, only: [:show, :index] #shows entire list of assignments and indiv assignments
+    resources :assignments, only: [:show, :index]
+    resources :user_assignments, only: [:show, :index] #shows entire list of assignments and indiv assignments
   end 
+
+  resources :user_assignments
 
 end
