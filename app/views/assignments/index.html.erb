@@ -1,10 +1,12 @@
 <h1>All Assignments</h1>
 
 <% @assignments.each do |a| %>
-    <%= a.title %> -  <%= a.attachment %> - <%= a.instructions %><br>
+   <%= link_to a.title, assignment_path(:id) %><br>
     
 
 <% end %>
 
+<div>
 <%= link_to "Create a New Assignment", new_assignment_path %><br>
 <%= link_to "Logout", logout_path, method: :post %>
+</div>

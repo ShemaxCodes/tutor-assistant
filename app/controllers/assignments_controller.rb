@@ -1,5 +1,6 @@
 class AssignmentsController < ApplicationController
      before_action :current_user
+     #before_action :admin_only, :except => :show, :new, :create
      protect_from_forgery
  
  def index 
@@ -35,8 +36,8 @@ end
  
  
  def show 
-     #byebug 
-     @assignment = current_user.assignments.find_by(user_id: params[:id], id: params[:user_id])
+     byebug 
+     @assignment = current_user.assignments.find_by(id: params[:user_id])
          #byebug
          render :show
      #byebug
@@ -78,6 +79,11 @@ end
      params.require(:assignment).permit(:title, :instructions, :due_date, :score)
  end
 
+ def admin_only
+    unless current_user.admin?
+      redirect_to :back, :alert => "Access denied."
+    end
+  end
 
  end
     

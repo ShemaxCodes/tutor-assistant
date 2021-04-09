@@ -1,4 +1,5 @@
 class UserAssignmentsController < ApplicationController
+    before_action :current_user
 
 def index 
     #byebug

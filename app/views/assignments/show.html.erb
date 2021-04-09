@@ -1,2 +1,11 @@
 <h2> Welcome, <% @current_user.username %> !</h2>
-<h3> This is your Student Dashboard </h3>
+<h3> This is your Assignment Dashboard </h3>
+
+<h1><%= @assignment.title %></h1><br>
+<%= @assignment.instructions %>
+<!--how to get attachment to show here as a link to open -->
+<br>
+
+
+<%= link_to "Edit Business", edit_assignment_path %><br>
+<%= link_to :back %><br>

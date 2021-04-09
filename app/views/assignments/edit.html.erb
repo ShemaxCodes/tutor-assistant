@@ -1,0 +1,27 @@
+<h1> Edit Assignment:</h1><br>
+
+<%= form_for @assignment do |f| %>
+<%= f.label :title, "Name of Assignment:" %>
+<%= f.text_field :title %>
+<br>
+
+<%= f.label :instructions, "Instructions:" %>
+<%= f.text_area :instructions %>
+<br>
+
+<%= f.label :attachment, "Upload Assignment:" %>
+<%= f.file_field :attachment %>
+<br>
+
+<%= f.label :due_date, "Due Date:" %>
+<%= f.datetime_field :due_date %>
+<br>
+
+<%= f.label :score, "Score:" %>
+<%= f.number_field :score %>
+<br>
+
+
+<br>
+<%= f.submit "Edit Assignment" %>
+<% end %>
