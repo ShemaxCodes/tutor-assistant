@@ -1,7 +1,9 @@
 class UserAssignmentsController < ApplicationController
 
-
-
+def index 
+    #byebug
+    @user_assignments = current_user.user_assignments 
+end 
 
 def show 
     #byebug 
@@ -9,6 +11,11 @@ def show
     #byebug
     render :show
     #byebug
+end 
+
+private
+def user_assignment_params
+    params.require(:user_assignment).permit(:user_id, :assignment_id) 
 end 
 
 end 
