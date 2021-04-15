@@ -26,6 +26,7 @@ end
      @assignment = Assignment.new(assignment_params) 
     if @assignment.save
      current_user.assignments << @assignment
+     
      #session[:user_id] = @user.id
          redirect_to user_assignments_path(:user_id)
     else 
@@ -49,7 +50,7 @@ end
      if !logged_in?
          redirect_to login_path
      end
-     @business = current_user.assignments.find_by(user_id: params[:id], id: params[:user_id])
+     @assignment = current_user.assignments.find_by(id: params[:id])
          if @assignment.title != nil || @assignment.instructions != nil 
                  render :edit
              else 
