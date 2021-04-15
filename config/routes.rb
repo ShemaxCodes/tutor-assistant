@@ -13,13 +13,16 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback', to: "sessions#google_login"
 
   resources :users 
-  resources :assignments
+  resources :assignments, only: [:index, :new, :create] 
+
+  resources :user_assignments
+
 
   resources :users, only: [:show] do #nested resource for assignments
-    resources :assignments, only: [:show, :index]
+    resources :assignments, shallow: true
     resources :user_assignments, only: [:show, :index] #shows entire list of assignments and indiv assignments
   end 
 
-  resources :user_assignments
+  
 
 end

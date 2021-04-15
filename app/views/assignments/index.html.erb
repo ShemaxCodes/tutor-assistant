@@ -1,7 +1,7 @@
 <h1>All Assignments</h1>
 
 <% @assignments.each do |a| %>
-   <%= link_to a.title, assignment_path(:id) %><br>
+   <%= link_to a.title, assignment_path(a) %><br>
     
 
 <% end %>

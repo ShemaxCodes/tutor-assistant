@@ -36,11 +36,12 @@ end
  
  
  def show 
-     byebug 
-     @assignment = current_user.assignments.find_by(id: params[:user_id])
-         #byebug
-         render :show
-     #byebug
+     #byebug 
+     @assignment = Assignment.find_by(id: params[:id])
+     if !current_user.assignments.include?(@assignment)
+     redirect_to assignments_path
+
+     end
  end 
  
  
