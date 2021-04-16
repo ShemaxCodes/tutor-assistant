@@ -21,17 +21,8 @@
 <%= f.number_field :score %>
 <br>
 
-
-<br>
-
-
-<div>
-    <h3>Assign to Student:</h3>
-    <%= f.fields_for :user, User.all do |user_attributes|%>
-        <%= user_attributes.label :role, "user role:" %>
-        <%= user_attributes.text_field :role %>
-    <% end %>
-  </div>
+<%= f.label :user_ids %>
+<%= f.collection_check_boxes(:user_ids, @students, :id, :first_name) %>
 
 <%= f.submit "Create Assignment" %>
 <% end %>

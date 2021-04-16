@@ -26,4 +26,12 @@ class User < ActiveRecord::Base
     def admin
       @current_user.role == "admin"
     end 
+
+    def full_name
+      self.first_name + " " + self.last_name
+    end 
+
+    def self.all_students
+      User.where(role: 'student')
+    end 
   end

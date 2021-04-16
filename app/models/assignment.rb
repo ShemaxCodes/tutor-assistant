@@ -1,6 +1,6 @@
 class Assignment < ActiveRecord::Base
     has_many :user_assignments
-    has_many :users, through: :user_assignments
+    has_many :users, through: :user_assignments#, source: :user_id
     
     def assign_to_student
         users = User.all 
@@ -10,3 +10,6 @@ class Assignment < ActiveRecord::Base
         end
     end
 end 
+
+#student = User.all.each_with_index {|a, b| puts "#{a.id}"}
+#student.find
