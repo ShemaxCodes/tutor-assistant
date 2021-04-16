@@ -17,6 +17,7 @@ end
     #byebug
      if current_user.teacher?
          @assignment = Assignment.new
+         byebug
      else 
          redirect_to login_path, notice: "Credentials not found"
      end 
@@ -26,7 +27,6 @@ end
      @assignment = Assignment.new(assignment_params) 
     if @assignment.save
      current_user.assignments << @assignment
-     
      #session[:user_id] = @user.id
          redirect_to user_assignments_path(:user_id)
     else 
@@ -37,9 +37,8 @@ end
  
  
  def show 
-     #byebug 
      @assignment = Assignment.find_by(id: params[:id])
-     if !current_user.assignments.include?(@assignment)
+     if !current_user.assignments.include?(@assignment) #if the current user's assignments does not include this assignment then
      redirect_to assignments_path
 
      end
@@ -87,5 +86,5 @@ end
     end
   end
 
- end
-    
+  
+end 

@@ -23,5 +23,16 @@
 
 
 <br>
+
+
+<div>
+    <h3>Assign to Student:</h3>
+    <%= f.fields_for :user, User.all do |user_attributes|%>
+        <%= user_attributes.label :role, "user role:" %>
+        <%= user_attributes.text_field :role %>
+    <% end %>
+  </div>
+
 <%= f.submit "Create Assignment" %>
 <% end %>
+
