@@ -18,7 +18,7 @@ end
      if current_user.teacher?
          @assignment = Assignment.new
          @students = User.all_students
-         @full_name = User.full_name
+        
          #byebug
      else 
          redirect_to login_path, notice: "Credentials not found"
