@@ -8,5 +8,7 @@
 
 
 <%= link_to "Edit Assignment", edit_assignment_path %><br>
-<%= link_to "Delete Assignment", assignment_path(@assignment), :data => {:confirm => 'Are you sure?'}, :method => :delete %>
-<%= link_to :back %><br>
+<%= link_to "Delete Assignment", assignment_path(@assignment), :data => {:confirm => 'Are you sure?'}, :method => :delete %><br>
+<br>
+
+<%= link_to "Back", "history.back()" %>
