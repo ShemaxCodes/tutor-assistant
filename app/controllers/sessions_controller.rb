@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
        elsif 
         user.student? && user.authenticate(params[:session][:password])
            log_in user
-           redirect_to user_user_assignments_path(:user_id)
+           redirect_to user_user_assignments_path(user)
        else 
            flash.now[:danger] = "Invalid email/password. Please try again."
            render :new

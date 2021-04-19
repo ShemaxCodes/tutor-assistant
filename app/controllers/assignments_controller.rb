@@ -17,7 +17,7 @@ end
     #byebug
      if current_user.teacher?
          @assignment = Assignment.new
-         @students = User.all_students
+         all_students
         
          #byebug
      else 
@@ -30,6 +30,7 @@ end
      byebug
     if @assignment.save
      current_user.assignments << @assignment
+
     
 
      #session[:user_id] = @user.id
@@ -89,6 +90,10 @@ end
     unless current_user.admin?
       redirect_to :back, :alert => "Access denied."
     end
+  end
+
+  def all_students
+    @students = User.all_students
   end
 
   
