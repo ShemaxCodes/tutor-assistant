@@ -1,40 +1,83 @@
 <!DOCTYPE html>
 <html>
 
-<style>
-<style>
-  * {
-    /*list-style: none;*/
-    margin: 0;
-    padding: 0;
-  }
-  html, body {
-    height: 100%;
-    width: 100%;
-  }
-
-  body {
-	background: url('');
-	background-attachment: fixed;
-	font-family: 'Archivo', sans-serif;
-    font-weight: 300;
-    line-height: 18px;
-  }
-
-  
-</style>
-
-
-
-  <head>
+<head>
     <title>Tutor Assistant</title>
+    <link href="https://fonts.googleapis.com/css?family=Archivo:500|Open+Sans:300,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oswald:wght@500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
-  </head>
+
+    <style>
+    * {
+      /*list-style: none;*/
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+  
+    body {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 300;
+    line-height: 18px;
+    padding-top: 80px;
+    }
+    
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        margin: 0 auto;
+        background-color: #ededed;
+        z-index: 9999; /*Keeps content from covering up the navbar*/
+      }
+    
+      .navbar-header {
+      float: left;
+      position: absolute;
+      padding: 14px 16px;
+      padding-left: 120px;
+      font-size: x-large;
+    }
+    
+    .nav-link {
+      padding: 14px 16px;
+      display: inline-block;
+    }
+    
+    .navbar-nav {
+      list-style-type: none;
+      float: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-60%, -50%);
+      
+    }
+    
+    
+    .navbar-right {
+      float: right;
+      list-style-type: none;
+      padding-right: 40px;
+      
+    }
+    
+    .navbar-right a {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 300;
+    }
+    
+  </style>
+</head>
 
   <body>
   <% flash.each do |type, msg| %>
