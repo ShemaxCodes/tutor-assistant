@@ -76,6 +76,24 @@
       font-weight: 300;
     }
     
+    .wrapper {
+      -webkit-backdrop-filter: blur(10px); /*Fixes Chrome support for backgrop*/
+      backdrop-filter: blur(20px);
+      /*-moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+      -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);*/
+      box-shadow: 0 0 10px rgba(0,0,0,.3);
+      margin: 200px auto;
+      max-width: 960px;
+      padding: 3.25%; /* 18px / 800px */
+      width: 85%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+
+
   </style>
 </head>
 
@@ -94,7 +112,7 @@
 
 	<ul class="navbar-nav">
 		<li class="nav-link"><a href="#">About</a></li>
-		<li class="nav-link"><a href="/#{current_user.id}/assignments">My Assignments</a></li>
+		<li class="nav-link"><a href="/assignments">All Assignments</a></li>
       
 	</ul>
 	<ul class="navbar-right">
@@ -105,7 +123,13 @@
 </nav>
 </div>
 </body>
-    <%= yield %>
+
+
+<div class="wrapper">
+<%= yield %>
+
+
+</div>
 
     
 </html>
