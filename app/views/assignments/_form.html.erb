@@ -1,6 +1,5 @@
-<h1> Edit Assignment:</h1><br>
+<%= form_for @assignment  do |f| %>
 
-<%= form_for @assignment do |f| %>
 <%= f.label :title, "Name of Assignment:" %>
 <%= f.text_field :title %>
 <br>
@@ -21,9 +20,8 @@
 <%= f.number_field :score %>
 <br>
 
+<%= f.label :user_ids %>
+<%= f.collection_check_boxes(:user_ids, @students, :id, :first_name) %>
 
-<br>
-<%= f.submit "Edit Assignment" %>
+<%= f.submit "Create Assignment" %>
 <% end %>
-
-<%= link_to "Back", :back  %>
