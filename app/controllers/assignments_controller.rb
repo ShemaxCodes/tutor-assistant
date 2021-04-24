@@ -83,7 +83,7 @@ end
  
  
  def assignment_params
-     params.require(:assignment).permit(:title, :instructions, :due_date, :score, :user_ids, :attachments)
+     params.require(:assignment).permit(:title, :instructions, :due_date, :score, :user_ids, :file)
  end
 
  def admin_only

@@ -9,7 +9,7 @@
 <br>
 
 <%= f.label :attachment, "Upload Assignment:" %>
-<%= f.file_field :attachment %>
+<%= f.file_field :file %>
 <br>
 
 <%= f.label :due_date, "Due Date:" %>
@@ -20,7 +20,7 @@
 <%= f.number_field :score %>
 <br>
 
-<%= f.label :user_ids %>
+<%= f.label :user_ids, "Students" %>
 <%= f.collection_check_boxes(:user_ids, @students, :id, :first_name) %>
 
 <%= f.submit "Create Assignment" %>
