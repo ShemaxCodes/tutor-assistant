@@ -2,14 +2,29 @@
 <h3> This is your Assignment Dashboard </h3><br><br><br>
 
 <h1><%= @assignment.title %></h1><br>
-<%= image_tag @assignment.file %>
+<% if @assignment.file.representable?%>
+<%= image_tag @assignment.file.representation(resize_to_limit: [100, 100])%>
+<%end%>
 <%= link_to "Telling Time", url_for(@assignment.file) %><br><br>
+
 <%= @assignment.instructions %>
 
 <!--how to get attachment to show here as a link to open -->
 <br>
 
-
+<ul>
+<% @assignment.file.each do |file| %>
+    <li>
+      <% if file.representable? %>
+        <%= image_tag file.representation(resize_to_limit: [100, 100]) %>
+        <% else %>
+        <%= link_to "Telling Time", url_for(@assignment.file) do %>
+          <%= image_tag "placeholder.png", alt: "Download file" %>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
 <%= link_to "Edit Assignment", edit_assignment_path %><br>
 <%= link_to "Delete Assignment", assignment_path(@assignment), :data => {:confirm => 'Are you sure?'}, :method => :delete %><br>
 <br>
