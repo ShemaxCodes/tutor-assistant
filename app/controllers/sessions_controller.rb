@@ -45,7 +45,9 @@ class SessionsController < ApplicationController
         user.password = SecureRandom.hex
     end 
         log_in @user
-        redirect_to #the user's show page (list of assignments if student)
+        if @user.student?
+            redirect_to user_user_assignments_path(@user)
+        end #the user's show page (list of assignments if student)
     end
    
 
