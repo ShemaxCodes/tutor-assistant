@@ -2,12 +2,8 @@
 <h3> This is your Assignment Dashboard </h3><br><br><br>
 
 <h1><%= @assignment.title %></h1><br>
-<% if @assignment.file.representable?%>
-<%= image_tag @assignment.file.representation(resize_to_limit: [100, 100])%>
-<%end%>
 
-<h3>Download Assignment</h3>
-<%= link_to "Telling Time", url_for(@assignment.file) %><br><br>
+<%= link_to "Open Assignment", url_for(@assignment.file) %><br><br>
 
 <%= @assignment.instructions %>
 
