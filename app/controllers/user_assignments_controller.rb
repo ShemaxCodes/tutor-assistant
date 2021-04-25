@@ -3,12 +3,12 @@ class UserAssignmentsController < ApplicationController
 
 def index 
     #byebug
-    @user_assignments = current_user.user_assignments 
+    @user_assignments = current_user.assignments 
 end 
 
 def show 
     #byebug 
-    @user_assignment = current_user.user_assignments.find_by(user_id: params[:id], id: params[:user_id])
+    @user_assignment = current_user.assignments.find_by(id: params[:id])
     #byebug
     render :show
     #byebug
