@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2021_04_24_230158) do
     t.integer "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "attachment"
   end
 
   create_table "user_assignments", force: :cascade do |t|
