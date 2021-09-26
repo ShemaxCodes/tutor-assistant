@@ -72,8 +72,8 @@ end
  end 
  
  def destroy
-     @assignment = assignment.find_by(id: params[:id])
      @assignment.destroy
+     #byebug
      redirect_to user_assignments_path
  end
  
