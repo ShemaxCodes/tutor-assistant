@@ -33,8 +33,9 @@
     }
     
     .content-container {
-      padding: 80px;
-      margin: 50px;
+      border: none;
+      padding: 30px;
+      margin: auto;
       text-align: center;
     }
       .navbar {
@@ -98,8 +99,12 @@
       text-align: center;
     }
 
-
-
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50% ;
+}
   </style>
 </head>
 
@@ -110,7 +115,6 @@
     </div>
   <% end %>
 
-  
   <nav class="navbar">
 	<div class="container">
 	<div class="navbar-header">
@@ -131,7 +135,7 @@
 
 
 <div class="content-container">
-<%= yield %>
+  <%= yield %>
 </div>
 
 </body>
