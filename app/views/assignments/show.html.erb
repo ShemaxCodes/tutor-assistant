@@ -1,13 +1,15 @@
-<h2> Welcome, <% current_user.username %> !</h2><br>
-<h3> This is your Assignment Dashboard </h3><br><br><br>
+<h2> Welcome, <%= @current_user.username %> !</h2><br>
+<h3> This is your Assignment Dashboard </h3><br><br>
+<hr><br><br>
 
-<h1><%= @assignment.title %></h1><br>
+
+<h1><%= @assignment.title %></h1><br><br>
 
 <%= link_to "Open Assignment", url_for(@assignment.file) %><br><br>
 
-<%= @assignment.instructions %>
+<%= @assignment.instructions %><br>
 
-<!--how to get attachment to show here as a link to open -->
+
 <br>
 
 

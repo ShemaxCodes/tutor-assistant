@@ -20,7 +20,7 @@
 <%= f.number_field :score %>
 <br>
 
-<%= f.label :user_ids, "Students:" %>
+<%= f.label :user_ids, "Students:" %><br>
 <%= f.collection_check_boxes(:user_ids, @students, :id, :first_name) %><br><br>
 
 <%= f.submit "Create Assignment" %>
