@@ -25,14 +25,18 @@
     }
   
     body {
-    background-image: url('/assets/images/ben-white-83tkHLPgg2Q-unsplash.jpg');
-    background-attachment: fixed;
+    background-color: yellow; 
     font-family: 'Archivo', sans-serif;
     font-weight: 300;
     line-height: 18px;
     padding-top: 80px;
     }
     
+    .content-container {
+      padding: 80px;
+      margin: 50px;
+      text-align: center;
+    }
       .navbar {
         position: fixed;
         top: 0;
@@ -124,14 +128,20 @@
 	</ul></div>
 </nav>
 </div>
+
+
+<div class="content-container">
+<%= yield %>
+</div>
+
 </body>
 
 
-<div class="wrapper">
-<%= yield %>
 
 
-</div>
+
+
+
 
     
 </html>

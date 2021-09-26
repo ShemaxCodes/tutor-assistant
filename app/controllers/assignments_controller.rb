@@ -27,7 +27,7 @@ end
  
  def create
      @assignment = Assignment.new(assignment_params) 
-     byebug
+  
     if @assignment.save
      current_user.assignments << @assignment
 
