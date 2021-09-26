@@ -1,8 +1,8 @@
 <h1>Your Assignments</h1>
 
-<% @user_assignments.each do |a| %>
+<% @user_assignments.each do |a| %><br><br>
     <%= link_to a.title, user_assignment_path(a) %>
 
 <% end %>
-
-<%= link_to "Logout", logout_path, method: :post %>
+<br>
+<br>
