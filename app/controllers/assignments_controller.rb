@@ -14,10 +14,9 @@ end
  
  
  def new
-    #byebug
      if current_user.teacher?
          @assignment = Assignment.new
-         all_students
+         all_students 
         
          #byebug
      else 
@@ -29,8 +28,9 @@ end
      @assignment = Assignment.new(assignment_params) 
   
     if @assignment.save
+        byebug
      current_user.assignments << @assignment
-
+     student_list.first.assignments << @assignment
     
 
      #session[:user_id] = @user.id
@@ -72,7 +72,7 @@ end
  end 
  
  def destroy
-     @assignment.destroy
+     @assignment.delete
      #byebug
      redirect_to user_assignments_path
  end

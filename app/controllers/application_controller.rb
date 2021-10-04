@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
         @current_user ||= User.find_by(id: session[:user_id])
     end 
 
+    def student_list
+        User.where(role: 'student')
+    end
+
     def logged_in?
         !current_user.nil?
     end 

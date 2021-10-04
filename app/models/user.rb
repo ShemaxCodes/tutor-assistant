@@ -34,4 +34,5 @@ class User < ActiveRecord::Base
     def self.all_students
       User.where(role: 'student')
     end 
+
   end
