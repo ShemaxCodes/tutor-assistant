@@ -17,8 +17,6 @@ end
      if current_user.teacher?
          @assignment = Assignment.new
          all_students 
-        
-         #byebug
      else 
          redirect_to login_path, notice: "Credentials not found"
      end 
@@ -32,8 +30,6 @@ end
      current_user.assignments << @assignment
      student_list.first.assignments << @assignment
     
-
-     #session[:user_id] = @user.id
          redirect_to "/users/#{current_user.id}/assignments"
     else 
          redirect_to "/users/#{current_user.id}/assignments/new"
@@ -73,7 +69,6 @@ end
  
  def destroy
      @assignment.delete
-     #byebug
      redirect_to user_assignments_path
  end
  
