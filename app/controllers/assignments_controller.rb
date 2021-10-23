@@ -1,3 +1,5 @@
+#this file contains working code and code that needs to be refactored.
+
 class AssignmentsController < ApplicationController
      before_action :current_user
      #before_action :admin_only, :except => :show, :new, :create
