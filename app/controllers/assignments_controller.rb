@@ -26,7 +26,7 @@ end
      @assignment = Assignment.new(assignment_params) 
   
     if @assignment.save
-        byebug
+        #byebug
      current_user.assignments << @assignment
      student_list.first.assignments << @assignment
     
