@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
    
    def create
        user = User.find_by(email: params[:session][:email].downcase)
+       #byebug
        if user.teacher? && user.authenticate(params[:session][:password])
            log_in user
            redirect_to assignments_path

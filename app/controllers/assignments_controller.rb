@@ -30,7 +30,7 @@ end
     if @assignment.save
         #byebug
      current_user.assignments << @assignment
-     student_list.first.assignments << @assignment
+     #student_list.first.assignments << @assignment
     
          redirect_to "/users/#{current_user.id}/assignments"
     else 
