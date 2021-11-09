@@ -13,3 +13,138 @@
  *= require_tree .
  *= require_self
  */
+
+
+ * {
+    /*list-style: none;*/
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+  background-color: #EFD912; 
+  font-family: 'Archivo', sans-serif;
+  font-weight: 300;
+  line-height: 18px;
+  /*padding-top: 80px;*/
+  }
+  
+  .content-container {
+    border: none;
+    padding: 30px;
+    margin: auto;
+    text-align: center;
+  }
+
+.navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      margin: 0 auto;
+      background-color: transparent;
+      z-index: 9999; /*Keeps content from covering up the navbar*/
+      border-radius: 8px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+    }
+  
+    .navbar-header {
+    float: left;
+    position: absolute;
+    padding: 14px 16px;
+    padding-left: 120px;
+    font-size: x-large;
+  }
+  
+  .nav-link {
+    padding: 14px 16px;
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  .navbar-nav {
+    list-style-type: none;
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+    
+  }
+  
+  
+  .navbar-right {
+    float: right;
+    list-style-type: none;
+    padding-right: 40px;
+    
+  }
+  
+  .navbar-right a {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+  }
+  
+  .wrapper {
+    -webkit-backdrop-filter: blur(10px); /*Fixes Chrome support for backgrop*/
+    backdrop-filter: blur(20px);
+    /*-moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);*/
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 200px auto;
+    max-width: 760px;
+    padding: 3.25%; /* 18px / 800px */
+    width: 85%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50% ;
+  }
+
+  input[type="submit"] {
+    background-color: #fcbb83;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    width: 25%;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  input[type="text"] {
+    width: 25%;
+    padding: 5px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: 'Archivo', sans-serif;
+    font-size: medium;
+
+}
+
+input[type="password"] {
+    width: 25%;
+    padding: 5px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: 'Archivo', sans-serif;
+    font-size: medium;
+
+}
