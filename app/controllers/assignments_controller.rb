@@ -42,9 +42,8 @@ end
  
  def show 
      @assignment = Assignment.find_by(id: params[:id])
-     if !current_user.assignments.include?(@assignment) #if the current user's assignments does not include this assignment then
-     redirect_to assignments_path
-
+     if !current_user.assignments.include?(@assignment) || @assignment.file == nil  #if the current user's assignments does not include this assignment then
+            redirect_to assignments_path, :alert => "Access denied."
      end
  end 
  
@@ -80,7 +79,7 @@ end
  
  
  def assignment_params
-     params.require(:assignment).permit(:title, :instructions, :due_date, :score, :user_ids, :file)
+     params.require(:assignment).permit(:title, :instructions, :due_date, :score, :user_ids)
  end
 
  def admin_only
